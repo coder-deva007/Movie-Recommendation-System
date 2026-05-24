@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadTitle()">
+    
+    <header style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+        <button class="auth-button" style="width: auto; padding: 10px 20px; background: #333;" onclick="window.location.href='index.html'">Back to Home</button>
+        <button class="auth-button" style="width: auto; padding: 10px 20px;" onclick="logout()">Logout</button>
+    </header>
+
+    <div class="search-container" style="display: flex; flex-direction: column; align-items: center;">
+        <input type="text" id="search-box" placeholder="Search for another movie..." onkeyup="debounceSearch()">
+        <div id="search-results" class="dropdown-content"></div>
+    </div>
+
+    <div class="movie-banner-container">
+        <img id="movie-banner" class="movie-banner" src="" alt="Movie Banner" style="display: none;">
+        <div class="movie-info-overlay">
+            <h1 id="movie-title" class="movie-title">Loading...</h1>
+            <p id="movie-desc" class="movie-description"></p>
+        </div>
+    </div>
+    
+    <div style="max-width: 1500px; margin: 0 auto; width: 100%; padding: 0 40px; box-sizing: border-box; text-align: left;">
+        
+        <div id="rating-section" style="background: #1E1E1E; padding: 20px; border-radius: 12px; margin-bottom: 40px; max-width: 400px; border: 1px solid #333;">
+            <h3 style="margin-top: 0; color: white;">Rate this movie:</h3>
+            <div style="display: flex; align-items: center;">
+                <select id="rating-value" style="padding: 10px; font-size: 16px; background: #121212; color: white; border: 1px solid #444; border-radius: 8px; flex-grow: 1; outline: none;">
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Good</option>
+                    <option value="3">3 - Average</option>
+                    <option value="2">2 - Poor</option>
+                    <option value="1">1 - Terrible</option>
+                </select>
+                <button onclick="submitRating()" class="auth-button" style="width: auto; padding: 10px 20px; margin-left: 15px; background: #4CAF50;">Save</button>
+            </div>
+            <div id="rating-msg" style="margin-top: 15px; font-size: 14px; font-weight: bold;"></div>
+        </div>
+
+        <h2 style="font-size: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 40px;">Similar Movies (Content-Based)</h2>
+        <div id="similar-row" class="movie-row"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

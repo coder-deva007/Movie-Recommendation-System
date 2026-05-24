@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hybrid Recommender - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadHome()">
+    <button onclick="logout()" style="float: right; padding: 8px 15px; background: #e50914; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Logout</button>
+    
+    <h1>Movie Recommender</h1>
+    
+    <!-- Typeahead Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-box" placeholder="Search for a movie..." onkeyup="debounceSearch()">
+        <div id="search-results" class="dropdown-content"></div>
+    </div>
+    
+    <h2>Personalized For You (NeuMF)</h2>
+    <div id="personalized-row" class="movie-row"></div>
+
+    <h2>Trending Now</h2>
+    <div id="trending-row" class="movie-row"></div>
+
+    <h2>Top Rated</h2>
+    <div id="toprated-row" class="movie-row"></div>
+
+    <h2>Popular Movies</h2>
+    <div id="popular-row" class="movie-row"></div>
+
+    <h2>Upcoming</h2>
+    <div id="upcoming-row" class="movie-row"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hybrid Recommender - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+
+    <div class="auth-container">
+        <h1 id="auth-title">Welcome Back</h1>
+        
+        <div id="login-form">
+            <p style="color: #aaa; font-size: 14px; margin-bottom: 20px;">
+                Enter a username, or type a number (1-610) to log in as a dataset user.
+            </p>
+            <input type="text" id="login-username" class="auth-input" placeholder="Username or ID (1-610)">
+            <input type="password" id="login-password" class="auth-input" placeholder="Password">
+            <button class="auth-button" onclick="login()">Log In</button>
+            <p class="auth-switch">New here? <span onclick="toggleAuth()">Create an account</span></p>
+        </div>
+
+        <div id="signup-form" style="display: none;">
+            <p style="color: #aaa; font-size: 14px; margin-bottom: 20px;">
+                Create an account to get personalized recommendations.
+            </p>
+            <input type="text" id="signup-username" class="auth-input" placeholder="Choose a Username">
+            <input type="password" id="signup-password" class="auth-input" placeholder="Choose a Password">
+            <button class="auth-button" onclick="signup()">Sign Up</button>
+            <p class="auth-switch">Already have an account? <span onclick="toggleAuth()">Log In</span></p>
+        </div>
+
+        <div id="auth-error" style="color: #ff4d4d; margin-top: 15px; font-size: 14px;"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

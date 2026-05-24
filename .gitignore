@@ -1,0 +1,12 @@
+# Virtual Environments
+venv/
+env/
+
+# Large Machine Learning Models
+*.pkl
+*.model
+backend/models/
+
+# Python Cache
+__pycache__/
+*.pyc
